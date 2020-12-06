@@ -1,16 +1,16 @@
 //
 //  ViewController.swift
-//  MAPD714_VitaliiPielievin_300885108_Assignment5
+//  MAPD714_VitaliiPielievin_300885108_Assignment6
 //
-//  Created by vitalii on 2020-11-29.
+//  Created by vitalii on 2020-12-06.
 //  Copyright © 2020 vitalii. All rights reserved.
 //
-//  To Do App Assignment 5 - To Do List App UI Part 2
-//  Version: 2.0 - Functionality with Data Persistence (Core Data)
+//  To Do App Assignment 6 - To Do List App Part 3
+//  Version: 3.0 - Gesture Control
 //
 //  Student Name: Vitalii Pielievin
 //  Student ID:   300885108
-//  Date Started: 2020/11/29
+//  Date Started: 2020/12/06
 //
 //  To Do App allows us to add tasks, select time and add notes, by pressing Save button that task would be visible in TableView,
 //  if the task is completed, we can press check button and it will be greyed out, there are also buttons for update(edit) and remove tasks.
@@ -85,7 +85,6 @@ class ViewController: UITableViewController, TaskViewCellDelegate, UIPickerViewD
         sortItem.inputView = sortPicker
         sortItem.placeholder = "Sort by: "
         selectedSortType = -1
-        
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -236,6 +235,8 @@ class ViewController: UITableViewController, TaskViewCellDelegate, UIPickerViewD
         return dateString
     }
     
+    
+    
     //TableView function, assigns cell text, greys out task if completed, etc.
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasksList.count
@@ -251,14 +252,41 @@ class ViewController: UITableViewController, TaskViewCellDelegate, UIPickerViewD
         cell.delegate = self
         return cell
     }
-   
-   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    
+    // Edit Gestures
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
         selectedTaskIndex = indexPath.row
         let isCompleted = tasksList[selectedTaskIndex!].value(forKey: "isCompleted") as! Bool
-        if !isCompleted {
-            selectedTask = tasksList[selectedTaskIndex!]
-            self.performSegue(withIdentifier: "DisplayTaskInfo", sender: nil)
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
+            if !isCompleted {
+                self.selectedTask = self.tasksList[self.selectedTaskIndex!]
+                self.performSegue(withIdentifier: "DisplayTaskInfo", sender: nil)
+            }
         }
+        edit.backgroundColor = .systemBlue
+        return UISwipeActionsConfiguration(actions: [edit])
+        
+    }
+    
+    // Delete Gestures
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        selectedTaskIndex = indexPath.row
+        let check = UIContextualAction(style: .normal, title: "Check") { (action, view, nil) in
+            print("Check")
+        }
+        check.backgroundColor = .systemYellow
+
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
+        self.tasksList.remove(at: self.selectedTaskIndex!)
+        tableView.reloadData()
+            
+        }
+        delete.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [delete, check])
+        
     }
     
     @IBAction func unwindFromDetailsVC(_ sender: UIStoryboardSegue) {

@@ -42,19 +42,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIG-sN-qtq">
-                                            <rect key="frame" x="341" y="6.6666666666666679" width="62" height="30.000000000000004"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="62" id="sxP-OR-gjf"/>
-                                            </constraints>
-                                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Remove"/>
-                                            <connections>
-                                                <action selector="delBtnTap:" destination="UZL-ln-QPU" eventType="touchUpInside" id="cLz-T9-MJX"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-Tx-I6D">
-                                            <rect key="frame" x="16" y="6.9999999999999982" width="46" height="29.333333333333329"/>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-Tx-I6D">
+                                            <rect key="frame" x="16" y="7" width="46" height="29.333333333333329"/>
                                             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Check"/>
                                             <connections>
@@ -71,19 +60,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhl-yL-UwS">
-                                            <rect key="frame" x="271" y="6.6666666666666679" width="62" height="30.000000000000004"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="62" id="GGG-4W-thb"/>
-                                            </constraints>
-                                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Update"/>
-                                            <connections>
-                                                <action selector="edtBtnTap:" destination="UZL-ln-QPU" eventType="touchUpInside" id="Te2-dS-ygc"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-dO-AcI">
-                                            <rect key="frame" x="70" y="9.3333333333333339" width="166" height="24.666666666666664"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-dO-AcI">
+                                            <rect key="frame" x="70" y="9.3333333333333304" width="47.333333333333343" height="24.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -92,26 +70,17 @@
                                     <constraints>
                                         <constraint firstItem="wpl-OG-RER" firstAttribute="leading" secondItem="vQ4-1n-PRI" secondAttribute="leadingMargin" constant="50" id="62w-k6-IGJ"/>
                                         <constraint firstItem="wpl-OG-RER" firstAttribute="bottom" secondItem="vQ4-1n-PRI" secondAttribute="bottomMargin" id="6tC-vx-X8X"/>
-                                        <constraint firstItem="cIG-sN-qtq" firstAttribute="leading" secondItem="fhl-yL-UwS" secondAttribute="trailing" constant="8" id="PrV-2g-3mv"/>
-                                        <constraint firstItem="Oje-dO-AcI" firstAttribute="centerY" secondItem="fhl-yL-UwS" secondAttribute="centerY" id="Rtq-VS-DFC"/>
-                                        <constraint firstItem="fhl-yL-UwS" firstAttribute="top" secondItem="cIG-sN-qtq" secondAttribute="top" id="UT8-CF-egj"/>
                                         <constraint firstItem="QcQ-Tx-I6D" firstAttribute="leading" secondItem="vQ4-1n-PRI" secondAttribute="leadingMargin" constant="-4" id="Yx7-ZV-jvr"/>
-                                        <constraint firstItem="fhl-yL-UwS" firstAttribute="leading" secondItem="Oje-dO-AcI" secondAttribute="trailing" constant="35" id="amT-P9-8wJ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="cIG-sN-qtq" secondAttribute="trailing" constant="-9" id="jYp-lI-xRr"/>
                                         <constraint firstItem="Oje-dO-AcI" firstAttribute="leading" secondItem="wpl-OG-RER" secondAttribute="leading" id="lAN-hF-Pki"/>
                                         <constraint firstItem="QcQ-Tx-I6D" firstAttribute="centerY" secondItem="Oje-dO-AcI" secondAttribute="centerY" id="nJy-I6-eH5"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="fhl-yL-UwS" secondAttribute="bottom" constant="19.333333333333329" id="pfV-2E-1EL"/>
                                         <constraint firstItem="QcQ-Tx-I6D" firstAttribute="top" secondItem="vQ4-1n-PRI" secondAttribute="topMargin" constant="-4" id="uaE-av-gvK"/>
                                         <constraint firstItem="wpl-OG-RER" firstAttribute="top" secondItem="Oje-dO-AcI" secondAttribute="bottom" constant="3" id="upY-B1-qbF"/>
-                                        <constraint firstItem="cIG-sN-qtq" firstAttribute="baseline" secondItem="fhl-yL-UwS" secondAttribute="firstBaseline" id="wCa-Fr-AWt"/>
                                         <constraint firstItem="Oje-dO-AcI" firstAttribute="leading" secondItem="QcQ-Tx-I6D" secondAttribute="trailing" constant="8" id="x88-Ko-OmQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="taskDate" destination="wpl-OG-RER" id="N35-xP-KPb"/>
-                                    <outlet property="taskDelBtn" destination="cIG-sN-qtq" id="mvd-uS-uQS"/>
                                     <outlet property="taskDoneCheckBox" destination="QcQ-Tx-I6D" id="Ve5-4L-nMf"/>
-                                    <outlet property="taskEditBtn" destination="fhl-yL-UwS" id="Nwi-yF-xA2"/>
                                     <outlet property="taskName" destination="Oje-dO-AcI" id="9kt-ff-S4M"/>
                                 </connections>
                             </tableViewCell>

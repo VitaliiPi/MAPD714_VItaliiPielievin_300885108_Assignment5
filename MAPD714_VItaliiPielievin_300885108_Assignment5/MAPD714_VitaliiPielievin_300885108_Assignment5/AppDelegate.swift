@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  MAPD714_VitaliiPielievin_300885108_Assignment5
+//  MAPD714_VitaliiPielievin_300885108_Assignment6
 //
-//  Created by vitalii on 2020-11-13.
+//  Created by vitalii on 2020-12-06.
 //  Copyright © 2020 vitalii. All rights reserved.
 //
 
